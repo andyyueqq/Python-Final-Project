@@ -1,5 +1,4 @@
 pandas
 streamlit
 matplotlib==3.8.0
-matplotlib.pyplot
 pydeck
