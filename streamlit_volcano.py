@@ -283,7 +283,7 @@ elif option == "Volcano Trends":
 
 # Option 5
 elif option == "Survey":
-    st.title("Volcano Information Form")
+    st.write("Volcano Information Form")
     st.write("You can create your own volcano here:")
     # Question 1: Slider
     volcano_height = st.slider(
