@@ -31,7 +31,7 @@ st.markdown(
         background: rgba(255, 255, 255, 0.0);
     }
     .css-1d391kg {
-        background-color: rgba(255, 255, 255, 0.15);
+        background-color: rgba(255, 255, 255, 0.05);
     }
     .stApp::before {
     content: "";
