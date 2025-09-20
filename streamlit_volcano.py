@@ -60,9 +60,6 @@ st.markdown(
         Welcome to Volcano Data Explorer
     <h3 style='color: steelblue; padding-top: 0'>
         Scroll Down to See More ⬇️
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg/600px-Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg" 
-         style="width: 15%; ">
-         
     """,
     unsafe_allow_html=True,
 )
