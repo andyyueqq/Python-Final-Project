@@ -22,9 +22,16 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f0f8ff; }
-    .css-1d391kg { 
-        background-color: #d3e0ea;}
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg/600px-Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg");
+        background-size: cover;       
+        background-repeat: no-repeat; 
+        background-attachment: fixed; 
+    }
+
+    /* sidebar  */
+    .css-1d391kg {  
+        background-color: rgba(255, 255, 255, 0.8);
+    }
     </style>
     """,
     unsafe_allow_html=True
