@@ -20,7 +20,6 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* 给整个页面加背景图，而不是只有 stApp */
     html, body, .stApp {
         background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg/600px-Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg");
         background-size: cover;
@@ -28,15 +27,20 @@ st.markdown(
         background-attachment: fixed;
     }
 
-    /* 顶部 header 透明 */
     header, .stApp header {
         background: rgba(255, 255, 255, 0.0);
     }
-
-    /* sidebar 半透明背景 */
     .css-1d391kg {
         background-color: rgba(255, 255, 255, 0.3);
     }
+    .stApp::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    z-index: 0;
+}
     </style>
     """,
     unsafe_allow_html=True
@@ -65,6 +69,7 @@ def load_data():
     return data
 #Drop rows with NaN in these columns <-
 volcano_data = load_data()
+
 
 # A function with three parameters, two have default values
 # This function is called twice
@@ -99,10 +104,21 @@ volcano_data["Eruption Year"] = [convert_to_year(x) for x in volcano_data["Last 
 
 # Sidebar navigation
 st.sidebar.markdown(
-    "<div style='background-color: steelblue;'>"
-    "<h3 style='color: skyblue;'>Select Analysis Here</h3></div>",
-    unsafe_allow_html=True,
+    """
+    <div style="
+        background: rgba(70, 130, 180, 0.7);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+    ">
+        Select Analysis Here
+    </div>
+    """,
+    unsafe_allow_html=True
 )
+
 
 option = st.sidebar.selectbox(
     " ",
@@ -288,7 +304,7 @@ elif option == "Volcano Trends":
     elif trend_option == "Eruption Trends":
         st.write("📈 **Eruption Trends Over Time**")
         # Filter out rows with "Unknown
-        eruptions_by_decade = volcano_data[volcano_data["Eruption Year"] != "Unknown"]
+        eruptions_by_decade = volcano_data.dropna(subset=["Eruption Year"])
         # Create  decade row
         eruptions_by_decade["Decade"] = (eruptions_by_decade["Eruption Year"] // 10) * 10
         # Count per decade
