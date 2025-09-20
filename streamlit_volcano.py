@@ -17,23 +17,31 @@ st.set_page_config(
 )
 
 # Chapter 15.3 Displaying text, use markdown because there is a picture included
-
 st.markdown(
     """
     <style>
-    .stApp {
+    /* 给整个页面加背景图，而不是只有 stApp */
+    html, body, .stApp {
         background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg/600px-Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg");
-        background-size: cover;       
-        background-repeat: no-repeat; 
-        background-attachment: fixed; 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
-    .css-1d391kg {  
-        background-color: rgba(255, 255, 255, 0.2);
+
+    /* 顶部 header 透明 */
+    header, .stApp header {
+        background: rgba(255, 255, 255, 0.0);
+    }
+
+    /* sidebar 半透明背景 */
+    .css-1d391kg {
+        background-color: rgba(255, 255, 255, 0.3);
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 st.markdown(
     """
     <h1 style='color: steelblue; padding-top: 0'>
