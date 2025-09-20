@@ -41,6 +41,12 @@ st.markdown(
     background-color: rgba(255, 255, 255, 0.2); 
     z-index: 0;
 }
+    .stApp > * {
+        position: relative;
+        z-index: 1;
+    }
+    </style>
+    """
     </style>
     """,
     unsafe_allow_html=True
