@@ -29,6 +29,34 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.markdown(
+    """
+    <style>
+    /* 整个页面背景色 */
+    .stApp {
+        background-color: #f0f8ff;  /* 这里改成你想要的颜色 */
+    }
+
+    /* 可选：修改 sidebar 背景色 */
+    .css-1d391kg {  /* 这个类名可能随 Streamlit 版本变化，需要检查 */
+        background-color: #d3e0ea;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <h1 style='color: steelblue; padding-top: 0'>
+        Welcome to Volcano Data Explorer
+    <h3 style='color: steelblue; padding-top: 0'>
+        Scroll Down to See More ⬇️
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg/600px-Augustine_volcano_Jan_24_2006_-_Cyrus_Read.jpg" 
+         style="width: 15%; ">
+         
+    """,
+    unsafe_allow_html=True,
+)
 
 # Chapter 15.11 Caching to manipulate large data sets faster
 DATA_URL = "volcanoes(in).csv"
