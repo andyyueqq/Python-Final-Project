@@ -21,15 +21,10 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* 整个页面背景色 */
     .stApp {
-        background-color: #f0f8ff;  /* 这里改成你想要的颜色 */
-    }
-
-    /* 可选：修改 sidebar 背景色 */
-    .css-1d391kg {  /* 这个类名可能随 Streamlit 版本变化，需要检查 */
-        background-color: #d3e0ea;
-    }
+        background-color: #f0f8ff; }
+    .css-1d391kg { 
+        background-color: #d3e0ea;}
     </style>
     """,
     unsafe_allow_html=True
@@ -46,6 +41,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.markdown("<hr style='border: 2px solid steelblue'>", unsafe_allow_html=True)
 
 # Chapter 15.11 Caching to manipulate large data sets faster
 DATA_URL = "volcanoes(in).csv"
